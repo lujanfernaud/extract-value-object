@@ -53,4 +53,36 @@ describe Grade do
       expect(described_class.new(score).letter).to eq(letter)
     end
   end
+
+  describe '#==' do
+    it 'returns true if all the fields are equal' do
+      sandi_grades = described_class.new(99)
+      matz_grades  = described_class.new(99)
+
+      expect(sandi_grades == matz_grades).to eq(true)
+    end
+
+    it 'returns false if all the fields are not equal' do
+      juan_grades  = described_class.new(96)
+      maria_grades = described_class.new(97)
+
+      expect(juan_grades == maria_grades).to eq(false)
+    end
+  end
+
+  describe '#eql?' do
+    it 'returns true if all the fields are equal' do
+      sandi_grades = described_class.new(99)
+      matz_grades  = described_class.new(99)
+
+      expect(sandi_grades.eql?(matz_grades)).to eq(true)
+    end
+
+    it 'returns false if all the fields are not equal' do
+      juan_grades  = described_class.new(96)
+      maria_grades = described_class.new(97)
+
+      expect(juan_grades.eql?(maria_grades)).to eq(false)
+    end
+  end
 end
