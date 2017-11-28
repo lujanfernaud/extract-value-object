@@ -6,9 +6,9 @@ Refactoring exercise extracting a [Value Object](https://martinfowler.com/bliki/
 
 ### Extract Value Object
 
-> [...]their notion of equality isn’t based on identity, instead two value objects are equal if all their fields are equal. -- Martin Fowler
+> [...] their notion of equality isn’t based on identity, instead two value objects are equal if all their fields are equal. -- Martin Fowler
 
-> [...]value objects which have the same internal fields must equal to each other. The value of all fields sufficiently determines the equality of a value object. -- Steven Yang
+> [...] value objects which have the same internal fields must equal to each other. The value of all fields sufficiently determines the equality of a value object. -- Steven Yang
 
 #### Before
 
@@ -16,10 +16,10 @@ Refactoring exercise extracting a [Value Object](https://martinfowler.com/bliki/
 # report_card.rb
 
 class ReportCard
-  attr_accessor :grades
+  attr_reader :grades
 
   def initialize(attributes = {})
-    @scores = attributes[:scores]
+    @scores   = attributes[:scores]
     @grades ||= grade_scores
   end
 
