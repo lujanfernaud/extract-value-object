@@ -1,5 +1,5 @@
 class ReportCard
-  attr_accessor :grades
+  attr_reader :grades
 
   def initialize(attributes = {})
     @scores   = attributes[:scores]
