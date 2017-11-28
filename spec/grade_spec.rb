@@ -53,14 +53,14 @@ describe Grade do
       expect(described_class.new(score).letter).to eq(letter)
     end
 
-    it 'creates a new Grade object when trying to change the score' do
-      initial_grade_score = 50
-      new_grade_score = 99
-      grade = described_class.new(initial_grade_score)
+    # it 'creates a new Grade object when trying to change the score' do
+    #   initial_grade_score = 50
+    #   new_grade_score = 99
+    #   grade = described_class.new(initial_grade_score)
 
-      other_grade = (grade.score = new_grade_score)
+    #   other_grade = (grade.score = new_grade_score)
 
-      expect(other_grade).not_to eq(grade)
-    end
+    #   expect(other_grade).not_to eq(grade)
+    # end
   end
 end

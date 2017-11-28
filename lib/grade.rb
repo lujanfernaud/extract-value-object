@@ -1,5 +1,5 @@
 class Grade
-  attr_reader :score, :letter
+  attr_reader :letter
 
   def self.letter_for(score)
     new(score).letter
@@ -10,14 +10,10 @@ class Grade
     @letter = letter_for_score
   end
 
-  def score=(score)
-    Grade.new(score)
-  end
-
   private
 
   def letter_for_score
-    case score
+    case @score
     when  1..59 then 'F'
     when 60..70 then 'D'
     when 70..80 then 'C'
